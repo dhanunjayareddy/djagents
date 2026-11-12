@@ -1,0 +1,8 @@
+---
+description: Enforce production security and reliability standards on Docker, Helm, and Terraform files
+globs: ["**/Dockerfile", "**/*.tf", "charts/**/*.yaml"]
+alwaysApply: false
+---
+- Container images must use explicit version tags or SHA digests—never `:latest`.
+- Kubernetes workloads must define `resources.requests`, `resources.limits`, `livenessProbe`, and `readinessProbe`.
+- AWS Security Groups must never allow `0.0.0.0/0` ingress on administrative ports (22, 3389).
